@@ -11,3 +11,4 @@ Additional features might be added to the program.
 - Detect check
 - Detect checkmate
 - Allow castling
+- Allow for promotions
