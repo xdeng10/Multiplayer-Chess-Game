@@ -6,16 +6,15 @@ import java.util.Scanner;
 public class Game {
 	
 	private static void welcomeMessage() {
-		
 		System.out.println("Welcome!");
 		System.out.println("This is a multiplayer chess game.");
 		System.out.println("Remember: If the position of a chess piece is requested, use the following format: row,col");
 		System.out.printf("Example: Row 3 and Column 5. Enter: 3,5\n\n");
 		System.out.printf("You always can end the game by typing 'exit'\n\n");
 		System.out.println("Please enter the names of the players:");
-		
 	}
 	
+	//If an user type "exit" the program stops
 	private static void endGame(String message) {
 		if(message.equalsIgnoreCase("Exit")) {
 			System.out.printf("\n\nThank you for playing! See you next time!\n");
@@ -23,6 +22,8 @@ public class Game {
 		}
 	}
 	
+	//Keeps asking the player for a position until the position is valid. 
+	//If a player wins, the game ends
 	private static boolean moveEnquiry(String player, String color, Board boardgame, Scanner userInput) {
 		boolean win = false;
 		boolean answer = false;
@@ -53,8 +54,7 @@ public class Game {
 		return win;
 	}
 	
-	
-	
+	//Verify positions provided by users.
 	private static int[] verifyPosInput(String input) {
 		endGame(input);
 		int[] result = new int[2];

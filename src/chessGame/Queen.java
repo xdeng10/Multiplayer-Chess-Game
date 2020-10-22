@@ -30,6 +30,10 @@ public class Queen implements Piece {
 		return color;
 	}
 
+	/*
+	 * Queen can be moved in a straight line vertically, horizontally, or diagonally.
+	 */
+	
 	public boolean legalMove(int newRow, int newCol, Board chessBoard) {
 		if (newRow == this.row && newCol == this.col) {
 			return false;
@@ -42,9 +46,15 @@ public class Queen implements Piece {
 		} else if (Math.abs(newRow - this.row) == Math.abs(newCol - this.col)) {
 			return diagonalValid(newRow, newCol, chessBoard);
 		}
-
 		return false;
 	}
+	
+	/*
+	 * Ensures that there are no pieces between the original position and the destination
+	 * One method to verify rows
+	 * One method to verify columns
+	 * One method to verify diagonals
+	 */
 
 	private boolean linearRowValid(int newCol, Board chessBoard) {
 		if (newCol < this.col) {
@@ -123,7 +133,5 @@ public class Queen implements Piece {
 		} else {
 			return color + " Queen: \u265B  (Q)";
 		}
-
 	}
-
 }

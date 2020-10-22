@@ -10,6 +10,7 @@ public class King implements Piece {
 		this.row = row;
 		this.col = col;
 	}
+	
 	public void setRow(int row) {
 		this.row = row;
 	}
@@ -26,7 +27,10 @@ public class King implements Piece {
 		return color;
 	}
 	
-
+	/*
+	 * King can only move one square in any direction, 
+	 * unless that square is already occupied by a piece of the same color
+	 */
 	public boolean legalMove(int newRow, int newCol, Board chessBoard) {
 		if (newRow == this.row && newCol == this.col) {
 			return false;
@@ -55,7 +59,5 @@ public class King implements Piece {
 		} else {
 			return color + " King: \u265A  (K)";
 		}
-
 	}
-
 }

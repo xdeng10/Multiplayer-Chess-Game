@@ -31,6 +31,12 @@ public class Pawn implements Piece {
 	public boolean getFirstMove() {
 		return firstMove;
 	}
+	
+	/*
+	 * Pawn can move forward one square. 
+	 * However if it's first move, it has the option of advancing two squares.
+	 * It can move diagonally one square forward if there is an enemy piece.
+	 */
 
 	public boolean legalMove(int newRow, int newCol, Board chessBoard) {
 		if (newRow == this.row && newCol == this.col) {

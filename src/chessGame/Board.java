@@ -42,6 +42,7 @@ public class Board {
 		this.board[7][7] = new Rook("White", 7, 7);
 	}
 	
+	//Get the piece of a certain position
 	public Piece getPiece(int row, int col) {
 		if(this.board[row][col] != null) {
 			return this.board[row][col];
@@ -49,6 +50,9 @@ public class Board {
 		return null;
 	}
 	
+	/*
+	 * Allows pieces to move around the chess board, while ensuring that the moves are legal.
+	 */
 	public boolean movePiece(int currRow, int currCol, int newRow, int newCol) {
 		Piece currPiece = this.getPiece(currRow, currCol);
 		if(currPiece.legalMove(newRow, newCol, this)) {
@@ -69,7 +73,7 @@ public class Board {
 	}
 	
 	
-	
+	//Print chess board with chess pieces using unicode.
 	public void printBoard() {
 		System.out.printf("    (0)  (1)  (2)  (3)  (4)  (5)  (6)  (7)\n");
 		for(int i=0; i<8; i++) {

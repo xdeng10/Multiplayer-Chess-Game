@@ -27,6 +27,10 @@ public class Bishop implements Piece{
 		return color;
 	}
 
+	/*
+	 * Bishop can only move diagonally
+	 */
+	
 	public boolean legalMove(int newRow, int newCol, Board chessBoard) {
 		if (newRow == this.row && newCol == this.col) {
 			return false;
@@ -39,6 +43,9 @@ public class Bishop implements Piece{
 		return false;
 	}
 
+	/*
+	 * Ensures that there are no pieces between the original position and the destination (diagonal direction)
+	 */
 	private boolean diagonalValid(int newRow, int newCol, Board chessBoard) {
 		if (newRow < this.row && newCol < this.col) {
 			for (int i = 1; i < Math.abs(newRow - this.row); i++) {

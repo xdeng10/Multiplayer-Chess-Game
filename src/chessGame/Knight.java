@@ -27,6 +27,11 @@ public class Knight implements Piece{
 		return color;
 	}
 	
+	/*
+	 * Knight can move two squares vertically and one square horizontally OR
+	 * move two squares horizontally and one square vertically.
+	 */
+	
 	public boolean legalMove(int newRow, int newCol, Board chessBoard) {
 		if (newRow == this.row && newCol == this.col) {
 			return false;
@@ -55,8 +60,6 @@ public class Knight implements Piece{
 			return color + " Knight: \u2658  (N)";
 		}else {
 			return color + " Knight: \u265E  (N)";
-		}
-		
+		}	
 	}
-
 }

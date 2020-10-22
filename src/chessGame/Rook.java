@@ -27,6 +27,10 @@ public class Rook implements Piece{
 		return color;
 	}
 	
+	/*
+	 * Rook moves horizontally or vertically, through any number of unoccupied squares.
+	 */
+	
 	public boolean legalMove(int newRow, int newCol, Board chessBoard) {
 		if (newRow == this.row && newCol == this.col) {
 			return false;
@@ -39,6 +43,12 @@ public class Rook implements Piece{
 		} 
 		return false;
 	}
+	
+	/*
+	 * Ensures that there are no pieces between the original position and the destination
+	 * One method to verify rows
+	 * One method to verify columns
+	 */
 	private boolean linearRowValid(int newCol, Board chessBoard) {
 		if (newCol < this.col) {
 			for (int i = newCol + 1; i < this.col; i++) {
